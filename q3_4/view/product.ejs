@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= product.name %>
+    </title>
+    <link rel="stylesheet" type="text/css" href="/css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/product.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-head">
+                <img src="<%= product.image %>" alt="img" class="card-image">
+            </div>
+            <div class="card-body">
+                <div class="product-desc">
+                    <span class="product-title">
+                        <%= product.name %>
+                    </span>
+                </div>
+                <div class="product-properties">
+
+                    <span class="product-price">
+                        USD<b>
+                            <%= product.price %>
+                        </b>
+                    </span>
+                </div>
+                <div class="action">
+                    <form id="add">
+                        <input type="text" id="name" name="name" value="<%= product.name %>">
+                        <input type="text" id="price" name="price" value="<%= product.price %>">
+                        <input class="add-card-btn" type="submit" value="Add to cart">
+                    </form>
+                    <div class="go-cart">
+                        <a href="/shoppingcart">
+                            <i class="fa fa-shopping-cart"><span id="cart-quantity">
+                                    <%= itemsQuantity %>
+                                </span></i>
+                        </a>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
